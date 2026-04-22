@@ -1,0 +1,2 @@
+C:/Caps/CAPSTONE-APPDEV/CAPSTONE-APPDEV/android/app/.cxx/Debug/j6c116v3/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Caps/CAPSTONE-APPDEV/CAPSTONE-APPDEV/android/app/.cxx/Debug/j6c116v3/armeabi-v7a/CMakeFiles/rebuild_cache.dir

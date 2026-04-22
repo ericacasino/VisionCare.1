@@ -1,0 +1,23 @@
+--------- beginning of main
+03-22 21:42:42.583 I/flutter ( 9079): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+03-22 21:42:42.708 I/flutter ( 9079): The Dart VM service is listening on http://127.0.0.1:39811/MolS5y9cvsA=/
+03-22 21:42:43.202 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Localization initialized[0m
+03-22 21:42:43.235 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Start[0m
+03-22 21:42:43.484 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Init state[0m
+03-22 21:42:43.486 I/flutter ( 9079): [32m[🌎 Easy Localization] [INFO] Saved locale loaded en[0m
+03-22 21:42:43.489 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Build[0m
+03-22 21:42:43.490 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate[0m
+03-22 21:42:43.491 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Init provider[0m
+03-22 21:42:43.632 I/flutter ( 9079): Resolving locale: en
+03-22 21:42:43.676 I/flutter ( 9079): Resolving locale: en
+03-22 21:42:43.965 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Load Localization Delegate[0m
+03-22 21:42:43.969 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Load asset from Assets/translations[0m
+03-22 21:42:44.075 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Load asset from Assets/translations[0m
+03-22 21:42:44.091 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Build[0m
+03-22 21:42:44.091 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate[0m
+03-22 21:42:44.091 I/flutter ( 9079): [90m[🌎 Easy Localization] [DEBUG] Init provider[0m
+03-22 21:42:44.116 I/flutter ( 9079): Resolving locale: en
+03-22 21:42:56.122 I/flutter ( 9079): Model loaded successfully!
+03-22 21:42:56.125 I/flutter ( 9079): Input shape: [1, 224, 224, 3]
+03-22 21:42:56.127 I/flutter ( 9079): Input type: float32
+03-22 21:42:59.341 I/flutter ( 9079): Raw Model Output: [0.008311224170029163, 0.2782743573188782, 0.6598126888275146, 0.04626770690083504, 0.007334045134484768]
