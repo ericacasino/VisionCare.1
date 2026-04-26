@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import './Scan.dart';
 import './Dashboard.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class PatientDetails extends StatefulWidget {
   const PatientDetails({super.key});
@@ -258,6 +259,7 @@ class _PatientDetailsState extends State<PatientDetails> {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNav(currentIndex: 1),
     );
   }
 }

@@ -6,6 +6,7 @@ import './History.dart';
 import './AboutPage.dart';
 import './PatientDetails.dart';
 import '../database/database_helper.dart';
+import '../widgets/custom_bottom_nav.dart';
 import 'dart:io';
 
 class Dashboard extends StatefulWidget {
@@ -34,10 +35,10 @@ class _DashboardState extends State<Dashboard> {
     final containerWidth = width * 0.9; // 90% of screen width
     final imageHeight = height * 0.25; // 25% of available height
     final scanContainerHeight = height * 0.17; // Increased from 0.15 to 0.17 (17% of available height)
-    final diagnosesHeight = height * 0.3; // 30% of available height
+    final diagnosesHeight = height * 0.40; // Increased to 40% to fit exactly 3 items
 
     return Scaffold(
-      backgroundColor: const Color(0xFF001529), // Dark background color to match the new design
+      backgroundColor: const Color(0xFF04101A), // Dark background color to match the new design
       body: SingleChildScrollView(
         // Wrap the body in a SingleChildScrollView
         child: Padding(
@@ -55,18 +56,18 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   PopupMenuButton(
                     child: Container(
-                      height: width * 0.1, // Responsive size
-                      width: width * 0.1,
+                      height: width * 0.08, // Shrunk from 0.12
+                      width: width * 0.08,
                       decoration: BoxDecoration(
-                        color: const Color(0xFFD9D9D9),
-                        borderRadius: BorderRadius.circular(width * 0.05),
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white, width: 2),
                       ),
                       child: Center(
                         child: Image.asset(
                           'Assets/images/Usericon.png',
-                          height: width * 0.06,
-                          width: width * 0.06,
-                          fit: BoxFit.contain,
+                          height: width * 0.05,
+                          width: width * 0.05,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -77,7 +78,7 @@ class _DashboardState extends State<Dashboard> {
                             const Icon(Icons.info_outline),
                             SizedBox(width: width * 0.02),
                             Text(
-                              'about_cdd'.tr(),
+                              'About Vision Care',
                               style: TextStyle(
                                 fontSize: width * 0.035,
                                 fontWeight: FontWeight.w500,
@@ -93,14 +94,13 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ],
                   ),
-                  SizedBox(width: width * 0.02),
-                  // Replace Expanded with a Container with constraints
+                  SizedBox(width: width * 0.04),
                   Container(
                     constraints: BoxConstraints(maxWidth: width * 0.7),
                     child: Text(
-                      'welcome'.tr(), // This is the correct way to use translations
+                      'Welcome', 
                       style: TextStyle(
-                        fontSize: width * 0.045,
+                        fontSize: width * 0.05,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -167,10 +167,11 @@ class _DashboardState extends State<Dashboard> {
                     },
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.black,
-                      backgroundColor: const Color(0xFF5ED3F2), // Light blue color from screenshot
-                      padding: EdgeInsets.symmetric(vertical: height * 0.02),
+                      backgroundColor: const Color(0xFF5ED3F2), // Light blue
+                      padding: EdgeInsets.symmetric(vertical: height * 0.025),
+                      elevation: 0, // Minimal, no light outside
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(width * 0.1), // More rounded pill shape
+                        borderRadius: BorderRadius.circular(width * 0.1),
                       ),
                     ),
                     child: Row(
@@ -179,10 +180,11 @@ class _DashboardState extends State<Dashboard> {
                         Icon(Icons.add_a_photo_outlined, size: width * 0.06),
                         SizedBox(width: width * 0.02),
                         Text(
-                          'scan_now'.tr(),
+                          'START NEW SCAN',
                           style: TextStyle(
                             fontSize: width * 0.045,
                             fontWeight: FontWeight.bold,
+                            letterSpacing: 1.0,
                           ),
                         ),
                       ],
@@ -191,21 +193,20 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
 
-              SizedBox(height: height * 0.04),
+              SizedBox(height: height * 0.06), // Increased spacing to move it down slightly
 
               // Recent Diagnoses Section
               Row(
                 children: [
-                  Image.asset(
-                    'Assets/images/search.png',
-                    height: width * 0.04,
-                    width: width * 0.04,
-                    color: Colors.white, // Tint white for dark theme
+                  Icon(
+                    Icons.search,
+                    color: Colors.white,
+                    size: width * 0.06,
                   ),
                   SizedBox(width: width * 0.02),
                   Expanded(
                     child: AutoSizeText(
-                      'recent_diagnoses'.tr(),
+                      'Recent Scans',
                       style: TextStyle(
                         fontSize: width * 0.045,
                         fontWeight: FontWeight.bold,
@@ -222,16 +223,9 @@ class _DashboardState extends State<Dashboard> {
                 height: diagnosesHeight,
                 width: containerWidth,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFFFFFF),
+                  color: const Color(0xFF0F2231), // Dark card background
                   borderRadius: BorderRadius.circular(width * 0.06),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 8.0,
-                      spreadRadius: 1.0,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
+                  border: Border.all(color: Colors.white12, width: 1),
                 ),
                 child: SingleChildScrollView(
                   child: Padding(
@@ -258,12 +252,18 @@ class _DashboardState extends State<Dashboard> {
                               displayLabel = 'Severe Diabetic Retinopathy';
                             }
 
-                            return _buildDiagnosisItem(
-                              displayLabel, // Use displayLabel instead of raw disease
-                              diagnosis['date'],
-                              width,
-                              rawDisease: diagnosis['disease'], // Pass raw disease for DB lookups
-                              confidence: confidence, // Pass confidence
+                            return Column(
+                              children: [
+                                _buildDiagnosisItem(
+                                  displayLabel, 
+                                  diagnosis['date'],
+                                  width,
+                                  rawDisease: diagnosis['disease'], 
+                                  confidence: confidence, 
+                                ),
+                                if (diagnosis != snapshot.data!.last)
+                                  Divider(color: Colors.white12, height: width * 0.04),
+                              ],
                             );
                           }).toList(),
                         );
@@ -276,11 +276,20 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(width),
+      bottomNavigationBar: const CustomBottomNav(currentIndex: 0),
     );
   }
 
   Widget _buildDiagnosisItem(String displayLabel, String date, double width, {String? rawDisease, double? confidence}) {
+    Color severityColor;
+    if (displayLabel.contains('Severe')) {
+      severityColor = Colors.redAccent;
+    } else if (displayLabel.contains('Mild')) {
+      severityColor = Colors.orangeAccent;
+    } else {
+      severityColor = Colors.green;
+    }
+
     return InkWell(
       onTap: () {
         // Get the diagnosis details from the database
@@ -310,13 +319,14 @@ class _DashboardState extends State<Dashboard> {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: width * 0.02),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(width * 0.02),
+              borderRadius: BorderRadius.circular(width * 0.03),
               child: FutureBuilder<List<Map<String, dynamic>>>(
                 future: DatabaseHelper().getDiagnoses(),
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData) return Container();
+                  if (!snapshot.hasData) return SizedBox(width: width * 0.15, height: width * 0.15);
                   final diagnosis = snapshot.data!.firstWhere(
                     (d) => d['disease'] == (rawDisease ?? displayLabel) && d['date'] == date,
                     orElse: () => {'imagePath': ''},
@@ -325,39 +335,63 @@ class _DashboardState extends State<Dashboard> {
                   return diagnosis['imagePath']?.isNotEmpty == true
                       ? Image.file(
                           File(diagnosis['imagePath']),
-                          height: width * 0.1,
-                          width: width * 0.1,
+                          height: width * 0.15,
+                          width: width * 0.15,
                           fit: BoxFit.cover,
                         )
-                      : Image.asset(
-                          'Assets/images/Logo.png', // Default to Logo instead of leaf
-                          height: width * 0.1,
-                          width: width * 0.1,
-                          fit: BoxFit.cover,
+                      : Container(
+                          height: width * 0.15,
+                          width: width * 0.15,
+                          color: Colors.grey.shade800,
+                          child: Icon(Icons.image_not_supported, color: Colors.white54),
                         );
                 },
               ),
             ),
-            SizedBox(width: width * 0.02),
+            SizedBox(width: width * 0.04),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   AutoSizeText(
-                    displayLabel, // Use the categorized label
+                    displayLabel,
                     style: TextStyle(
                       fontSize: width * 0.04,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black, // Ensure visibility on white card
+                      color: Colors.white,
                     ),
                     minFontSize: 10,
                     maxLines: 1,
                   ),
+                  SizedBox(height: width * 0.015),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.02, vertical: width * 0.005),
+                        decoration: BoxDecoration(
+                          color: severityColor.withOpacity(0.15),
+                          border: Border.all(color: severityColor.withOpacity(0.5)),
+                          borderRadius: BorderRadius.circular(width * 0.02),
+                        ),
+                        child: Text(
+                          'Severity: ${displayLabel.contains("Severe") ? "Severe DR" : displayLabel.contains("Mild") ? "Mild DR" : "No DR"}',
+                          style: TextStyle(
+                            color: severityColor,
+                            fontSize: width * 0.025,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: width * 0.02),
+                      Icon(Icons.info_outline, color: Colors.grey, size: width * 0.035),
+                    ],
+                  ),
+                  SizedBox(height: width * 0.015),
                   AutoSizeText(
                     date,
                     style: TextStyle(
-                      fontSize: width * 0.035,
-                      color: Colors.grey,
+                      fontSize: width * 0.03,
+                      color: Colors.grey.shade500,
                     ),
                     minFontSize: 8,
                     maxLines: 1,
@@ -371,58 +405,5 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  Widget _buildBottomNavigationBar(double width) {
-    return BottomNavigationBar(
-      currentIndex: 0,
-      onTap: (index) {
-        if (index == 1) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const PatientDetails()),
-          );
-        } else if (index == 2) {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const History()),
-          );
-        }
-      },
-      elevation: 10,
-      backgroundColor: const Color(0xFF001529),
-      selectedItemColor: const Color(0xFF5ED3F2), // Matching the scan button color
-      unselectedItemColor: Colors.grey,
-      type: BottomNavigationBarType.fixed,
-      selectedFontSize: width * 0.025,
-      unselectedFontSize: width * 0.025,
-      iconSize: width * 0.05,
-      items: [
-        _buildNavigationBarItem('Home', 'home', width),
-        _buildNavigationBarItem('ScanNavBar', 'scan', width),
-        _buildNavigationBarItem('DiagnosIcon', 'diagnose', width),
-      ],
-    );
-  }
 
-  BottomNavigationBarItem _buildNavigationBarItem(
-      String iconName, String label, double width) {
-    return BottomNavigationBarItem(
-      icon: Image.asset(
-        'Assets/images/$iconName.png',
-        height: width * 0.05,
-        width: width * 0.05,
-      ),
-      label: label.tr(),
-      activeIcon: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xFF45DFB1),
-          borderRadius: BorderRadius.circular(width * 0.025),
-        ),
-        padding: EdgeInsets.all(width * 0.02),
-        child: Image.asset(
-          'Assets/images/$iconName.png',
-          height: width * 0.05,
-          width: width * 0.05,
-        ),
-      ),
-    );
-  }
 }

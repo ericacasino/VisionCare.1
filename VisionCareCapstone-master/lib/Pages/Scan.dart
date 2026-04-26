@@ -299,7 +299,7 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
                 ],
               ),
               content: const Text(
-                "The system determined that the captured image is not a valid retina or eye. Please ensure you are taking a clear, well-lit photo of the patient's eye.",
+                "The system determined that the captured image is not a valid retina. Please ensure you are taking a clear, well-lit photo of the patient's retina",
                 style: TextStyle(color: Colors.white70),
               ),
               actions: [

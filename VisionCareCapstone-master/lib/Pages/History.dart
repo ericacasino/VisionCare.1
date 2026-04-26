@@ -6,6 +6,7 @@ import 'Results.dart';
 import 'Dashboard.dart';
 import 'PatientDetails.dart';
 import 'ExportReport.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class History extends StatefulWidget {
   const History({Key? key}) : super(key: key);
@@ -342,64 +343,7 @@ class _HistoryState extends State<History> {
           ),
         ],
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(width),
-    );
-  }
-
-  Widget _buildBottomNavigationBar(double width) {
-    return BottomNavigationBar(
-      currentIndex: 2,
-      onTap: (index) {
-        if (index == 0) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const Dashboard()),
-          );
-        } else if (index == 1) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const PatientDetails()),
-          );
-        }
-      },
-      elevation: 10,
-      backgroundColor: const Color(0xFF001529),
-      selectedItemColor: const Color(0xFF5ED3F2),
-      unselectedItemColor: Colors.grey,
-      type: BottomNavigationBarType.fixed,
-      selectedFontSize: width * 0.025,
-      unselectedFontSize: width * 0.025,
-      iconSize: width * 0.05,
-      items: [
-        _buildNavigationBarItem('Home', 'home', width),
-        _buildNavigationBarItem('ScanNavBar', 'scan', width),
-        _buildNavigationBarItem('DiagnosIcon', 'diagnose', width),
-      ],
-    );
-  }
-
-  BottomNavigationBarItem _buildNavigationBarItem(
-      String iconName, String label, double width) {
-    return BottomNavigationBarItem(
-      icon: Image.asset(
-        'Assets/images/$iconName.png',
-        height: width * 0.05,
-        width: width * 0.05,
-        color: Colors.white,
-      ),
-      label: label.tr(),
-      activeIcon: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xFF45DFB1),
-          borderRadius: BorderRadius.circular(width * 0.025),
-        ),
-        padding: EdgeInsets.all(width * 0.02),
-        child: Image.asset(
-          'Assets/images/$iconName.png',
-          height: width * 0.05,
-          width: width * 0.05,
-        ),
-      ),
+      bottomNavigationBar: const CustomBottomNav(currentIndex: 2),
     );
   }
 }

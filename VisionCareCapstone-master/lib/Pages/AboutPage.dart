@@ -25,7 +25,7 @@ class AboutPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: AutoSizeText(
-          'about_cdd'.tr(),
+          'About Vision Care',
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class AboutPage extends StatelessWidget {
                   child: Stack(
                     children: [
                       Image.asset(
-                        'Assets/images/FarmImage.png',
+                        'Assets/images/DashboardBanner.png',
                         fit: BoxFit.cover,
                         width: double.infinity,
                         height: double.infinity,
@@ -83,7 +83,7 @@ class AboutPage extends StatelessWidget {
                         left: screenSize.width * 0.05,
                         right: screenSize.width * 0.05,
                         child: AutoSizeText(
-                          'empowering_farmers'.tr(),
+                          'Empowering Eye Health\nwith AI Technology',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: subtitleSize,
@@ -117,7 +117,7 @@ class AboutPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'what_is_cdd'.tr(),
+                    'What is Diabetic Retinopathy?',
                     style: TextStyle(
                       fontSize: subtitleSize,
                       fontWeight: FontWeight.bold,
@@ -126,7 +126,7 @@ class AboutPage extends StatelessWidget {
                   ),
                   SizedBox(height: screenSize.height * 0.02),
                   AutoSizeText(
-                    'cdd_description'.tr(),
+                    'Diabetic Retinopathy is a diabetes complication that affects eyes. It is caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina).\n\nVisionCare is an innovative AI-powered application designed to help healthcare professionals and patients identify and manage Diabetic Retinopathy effectively.',
                     style: TextStyle(
                       fontSize: bodySize,
                       height: 1.6,
@@ -158,7 +158,7 @@ class AboutPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'key_features'.tr(),
+                    'Key Features',
                     style: TextStyle(
                       fontSize: subtitleSize,
                       fontWeight: FontWeight.bold,
@@ -169,26 +169,26 @@ class AboutPage extends StatelessWidget {
                   _buildFeatureItem(
                     context: context,
                     icon: Icons.camera_alt,
-                    title: 'real_time_detection'.tr(),
-                    description: 'real_time_description'.tr(),
+                    title: 'Real-time Detection',
+                    description: 'Instantly analyze retinal images using our AI model',
                   ),
                   _buildFeatureItem(
                     context: context,
                     icon: Icons.info_outline,
-                    title: 'disease_info'.tr(),
-                    description: 'disease_info_description'.tr(),
+                    title: 'Severity Classification',
+                    description: 'Accurate classification of Mild, Severe, or No DR',
                   ),
                   _buildFeatureItem(
                     context: context,
                     icon: Icons.history,
-                    title: 'history_tracking'.tr(),
-                    description: 'history_description'.tr(),
+                    title: 'Patient History',
+                    description: 'Keep track of all previous diagnoses and patients',
                   ),
                   _buildFeatureItem(
                     context: context,
-                    icon: Icons.psychology,
-                    title: 'expert_guidance'.tr(),
-                    description: 'expert_description'.tr(),
+                    icon: Icons.picture_as_pdf,
+                    title: 'Export Reports',
+                    description: 'Generate PDF reports of patient diagnoses',
                   ),
                 ],
               ),
@@ -213,7 +213,7 @@ class AboutPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'how_to_use'.tr(),
+                    'How to Use',
                     style: TextStyle(
                       fontSize: subtitleSize,
                       fontWeight: FontWeight.bold,
@@ -221,10 +221,10 @@ class AboutPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: screenSize.height * 0.02),
-                  _buildStepItem(context, '1', 'step_1'.tr()),
-                  _buildStepItem(context, '2', 'step_2'.tr()),
-                  _buildStepItem(context, '3', 'step_3'.tr()),
-                  _buildStepItem(context, '4', 'step_4'.tr()),
+                  _buildStepItem(context, '1', 'Open the app and tap on "Scan"'),
+                  _buildStepItem(context, '2', 'Enter the Patient Details'),
+                  _buildStepItem(context, '3', 'Take a clear photo of the retina or pick from gallery'),
+                  _buildStepItem(context, '4', 'Wait for AI analysis and view detailed results'),
                 ],
               ),
             ),

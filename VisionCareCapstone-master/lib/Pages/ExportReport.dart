@@ -688,13 +688,6 @@ class _ExportReportState extends State<ExportReport> {
                 width: width * 0.8,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(width * 0.1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF5ED3F2).withOpacity(0.4),
-                      blurRadius: 15,
-                      spreadRadius: 2,
-                    ),
-                  ],
                 ),
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _exportToPDF,
