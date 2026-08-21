@@ -1,0 +1,33 @@
+--------- beginning of main
+03-22 21:21:46.747 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Init state[0m
+03-22 21:21:46.749 I/flutter (30354): [32m[🌎 Easy Localization] [INFO] Saved locale loaded en[0m
+03-22 21:21:46.752 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Build[0m
+03-22 21:21:46.752 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate[0m
+03-22 21:21:46.753 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Init provider[0m
+03-22 21:21:46.886 I/flutter (30354): Resolving locale: en
+03-22 21:21:46.926 I/flutter (30354): Resolving locale: en
+03-22 21:21:47.160 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Load Localization Delegate[0m
+03-22 21:21:47.164 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Load asset from Assets/translations[0m
+03-22 21:21:47.243 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Load asset from Assets/translations[0m
+03-22 21:21:47.259 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Build[0m
+03-22 21:21:47.259 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate[0m
+03-22 21:21:47.259 I/flutter (30354): [90m[🌎 Easy Localization] [DEBUG] Init provider[0m
+03-22 21:21:47.280 I/flutter (30354): Resolving locale: en
+03-22 21:23:33.609 I/flutter ( 2742): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+03-22 21:23:33.749 I/flutter ( 2742): The Dart VM service is listening on http://127.0.0.1:33931/5FWSJEXKoUY=/
+03-22 21:23:34.396 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Localization initialized[0m
+03-22 21:23:34.430 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Start[0m
+03-22 21:23:34.575 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Init state[0m
+03-22 21:23:34.580 I/flutter ( 2742): [32m[🌎 Easy Localization] [INFO] Saved locale loaded en[0m
+03-22 21:23:34.588 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Build[0m
+03-22 21:23:34.589 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate[0m
+03-22 21:23:34.607 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Init provider[0m
+03-22 21:23:34.756 I/flutter ( 2742): Resolving locale: en
+03-22 21:23:34.807 I/flutter ( 2742): Resolving locale: en
+03-22 21:23:35.114 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Load Localization Delegate[0m
+03-22 21:23:35.118 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Load asset from Assets/translations[0m
+03-22 21:23:35.228 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Load asset from Assets/translations[0m
+03-22 21:23:35.244 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Build[0m
+03-22 21:23:35.244 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Init Localization Delegate[0m
+03-22 21:23:35.244 I/flutter ( 2742): [90m[🌎 Easy Localization] [DEBUG] Init provider[0m
+03-22 21:23:35.269 I/flutter ( 2742): Resolving locale: en

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915933765846",
+    "project_id": "capstone-appdev-33715",
+    "storage_bucket": "capstone-appdev-33715.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915933765846:android:89cdf220bbdfcbfaf26977",
+        "android_client_info": {
+          "package_name": "com.example.visioncare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9NX21azFHY00RIWcs9BEPsj5MI4afPXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
